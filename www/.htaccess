@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+        RewriteEngine On
+        RewriteCond %{QUERY_STRING} ^(.*)$
+        RewriteRule ^(.*)/list-([0-9]+)-([0-9]+)\.html$ $1/index.php?v=listing&cid=$2&page=$3&%1
+RewriteCond %{QUERY_STRING} ^(.*)$
+        RewriteRule ^(.*)/item-([0-9]+)-([0-9]+)-([0-9]+)\.html$ $1/index.php?v=show&cid=$2&id=$3&page=$3&%1
+        RewriteCond %{QUERY_STRING} ^(.*)$
+        RewriteRule ^(.*)/show-([0-9]+)-([0-9]+)-([0-9]+)\.html$ $1/index.php?v=show&cid=$2&id=$3&page=$3&%1
+</IfModule>

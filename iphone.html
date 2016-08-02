@@ -1,0 +1,82 @@
+ 
+<!DOCTYPE HTML> 
+<html> 
+<meta charset="utf-8"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>iphone手机桌面效果</title> 
+<style type="text/css"> 
+body,div,ul,li{padding: 0; margin: 0; } 
+li{list-style: none; } 
+body {background: #333; } 
+#iphone {width: 900px; height: 600px; background: url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/bg.jpg); position: absolute; top: 50%; left: 50%; margin: -300px 0 0 -450px; } 
+#wrap {width: 240px; height: 360px; position: absolute; top: 121px; left: 326px; overflow:hidden; } 
+#iphone ul#zm {width: 1200px; height: 360px; cursor: pointer; position: absolute; top: 0px; left: 0px; background:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/background.jpg) center center;} 
+#iphone ul#zm li {float: left; width:240px; height:350px;padding-top:10px;overflow:hidden;} 
+#iphone ul#zm li div{float: left; width:60px; height:80px; background-repeat: no-repeat;margin: 10px;position: relative;} 
+#iphone ul#zm li div.icon::after{bottom: -8px;color:#fff;content: attr(title);font-size: 12px;height: 20px;left: -8px;overflow: hidden;position: absolute;text-align: center;white-space: nowrap;width: 74px;text-shadow: 0 0 3px #222;} 
+#iphone ul#btn{position:absolute;left:60px;bottom:5px;width:140px;height:30px;} 
+#iphone ul#btn li{float:left;width:6px;height:6px;border-radius:50%;background:#fff;margin:10px;} 
+#iphone ul#btn li.current{background:#00A2D6;} 
+</style> 
+<script type="text/javascript"> 
+function startMove(e,t){if(e.oTimer){clearInterval(e.oTimer)}e.oTimer=setInterval(function(){doMove(e,t)},30)}function doMove(e,t){var n=e.offsetLeft;iSpeed+=(t-n)/5;iSpeed*=.7;n+=iSpeed;if(Math.abs(t-n)<1&&Math.abs(iSpeed)<1){clearInterval(e.oTimer);e.oTimer=null;n=t}e.style.left=n+"px"}function startDrag(e){var t=e.getElementsByTagName("li");e.onmousedown=function(n){var r=n||event;e.iStartX=e.offsetLeft;var i=r.clientX-e.offsetLeft;document.onmousemove=function(t){var n=t||event;var r=n.clientX-i;e.style.left=r+"px";return false};document.onmouseup=function(){document.onmousemove=null;document.onmouseup=null;if(Math.abs(e.offsetLeft-e.iStartX)>=0){if(e.offsetLeft>e.iStartX){iNow--;if(iNow<0){iNow=0}}else{iNow++;if(iNow>=t.length){iNow=t.length-1}}}startMove(e,-iNow*t[0].offsetWidth);var n=document.getElementById("btn");var r=n.getElementsByTagName("li");for(var i=0;i<r.length;i++){r[i].className=""}r[iNow].className="current"};stopMove(e);return false}}function stopMove(e){if(e.oTimer){clearInterval(e.oTimer)}}var oTimer=null;var iNow=0;var iSpeed=0;window.onload=function(){var e=document.getElementById("zm");startDrag(e);var t=document.getElementById("btn");var n=t.getElementsByTagName("li");n[iNow].className="current"} 
+</script> 
+</head> 
+<body> 
+<div id="iphone"> 
+<div id="wrap"> 
+<ul id="zm"> 
+<li> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/Maps.png)" title="Google Maps"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/Photos.png)" title="Photo Gallery"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/Chuzzle.png)" title="Chuzzle"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/Safari.png)" title="Safari"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/Weather.png)" title="Weather"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/nes.png)" title="NES Emulator"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/Calendar.png)" title="Calendar"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/Clock.png)" title="Clock"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/BossPrefs.png)" title="Boss Prefs"></div> 
+</li> 
+<li> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/Chess.png)" title="Chess"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/Mail.png)" title="Mail"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/Phone.png)" title="Phone"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/SMS.png)" title="SMS Center"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/Camera.png)" title="Camera"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/iPod.png)" title="iPod"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/Calculator.png)" title="Calculator"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/Music.png)" title="Music"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/Poof.png)" title="Poof"></div> 
+</li> 
+<li> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/Settings.png)" title="Settings"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/YouTube.png)" title="Youtube"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/psx4all.png)" title="PSx4All"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/VideoRecorder.png)" title="Record Video"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/Installer.png)" title="Installer"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/Notes.png)" title="Notes"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/RagingThunder.png)" title="RagingThunder"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/Stocks.png)" title="Stocks"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/genesis4iphone.png)" title="Genesis"></div> 
+</li> 
+<li> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/snes4iphone.png)" title="SNES Emulator"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/Calendar.png)" title="Calendar"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/Clock.png)" title="Clock"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/Photos.png)" title="Photo Gallery"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/Maps.png)" title="Google Maps"></div> 
+</li> 
+<li> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/Camera.png)" title="Camera"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/iPod.png)" title="iPod"></div> 
+<div class="icon" style="background-image:url(http://files.jb51.net/file_images/article/201212/mobilhdmenu/Calculator.png)" title="Calculator"></div> 
+</li> 
+</ul> 
+<ul id="btn"> 
+<li></li><li></li><li></li><li></li><li></li> 
+</ul> 
+</div> 
+</div> 
+</body> 
+</html> 
