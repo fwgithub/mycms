@@ -49,6 +49,7 @@ final class WUZHI_application {
 	 */
     public function run() {
         $file = $this->load_file();
+
         if(!defined('IN_ADMIN')) {
             if(CLOSE) {
                 $siteconfigs = get_cache('siteconfigs');
@@ -94,8 +95,8 @@ final class WUZHI_application {
         if (file_exists($filepath)) {
             //$name = 'WUZHI_'.$filename;
             $name = $filename;
-            if (class_exists($name, FALSE) === FALSE) {
-                require_once($filepath);
+            if (class_exists($name, FALSE) === FALSE) {             //永远是true
+                require_once($filepath);            //关键点定义call_user_func文件路径
             }
         }
 
@@ -120,7 +121,7 @@ final class WUZHI_application {
         //print_r($static_file);
         $GLOBALS['_CLASS_NAME_'] = $name;
         $static_file[$filename] = isset($filename) ? new $name($param) : new $name();
-        print_r($static_file);
+
         return $static_file[$filename];
     }
 }
