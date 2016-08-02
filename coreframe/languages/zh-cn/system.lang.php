@@ -2,7 +2,7 @@
 $LANG['submit'] = '提 交';
 $LANG['yes'] = '是';
 $LANG['no'] = '否';
-$LANG['login_success'] = '登录成功！';
+$LANG['login_success'] = '登录成功admin！';
 $LANG['operation_success'] = '操作成功！';
 $LANG['operation_failure'] = '操作失败！';
 $LANG['add_success'] = '数据添加成功！';
