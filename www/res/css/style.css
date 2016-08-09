@@ -101,7 +101,7 @@ a,a:hover,a:focus{text-decoration:none;outline:none;-webkit-transition:all 0.3s;
 #navigation-mobile li a:focus{}
 
 /*      左侧菜单        */
-#sidebar{width:210px;position:relative;background:#ecf0f1;border-right: 1px solid #c4c8d0;display: block;float: left;}
+#sidebar{width:278px;position:relative;background:#ecf0f1;border-right: 1px solid #c4c8d0;display: block;float: left;}
 #sidebar .appicon{margin-bottom: 20px;padding-top: 15px;}
 #sidebar .appicon img{border: 5px solid #e4e8e9;border-radius: 50%;-webkit-border-radius: 50%; border: none\9;}
 #sidebar ul li{position:relative;}

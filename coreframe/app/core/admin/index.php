@@ -56,8 +56,9 @@ final class index extends WUZHI_admin {
             $siteid = 1;
             set_cookie('siteid',1);
         }
+        print_r($username);
         include $this->template('index');
-
+        //$soap = new SoapClient(null,array('location'=>"http://localhost/Test/MyService/Server.php",'uri'=>'Server.php'));
     }
 
 
@@ -263,6 +264,181 @@ final class index extends WUZHI_admin {
     public function keep_alive() {
         $uid = $_SESSION['uid'];
         echo date('H:i:s',SYS_TIME);
+    }
+
+    public function welcome() {
+
+        echo '<div class="col-lg-6">
+            <section class="panel">
+                <header class="panel-heading bm0">
+                    <span>欢迎来到运营数据统计管理后台!</span>
+                            <span class="tools pull-right">
+                                <a class="icon-chevron-down" href="javascript:;"></a>
+                            </span>
+                </header>
+                <div class="panel-body" id="panel-bodys">
+                    <table class="table table-hover personal-task">
+                        <tbody>
+
+                        <tr>
+                            <td><strong>admin</strong>：【职位】<br>
+                                <div  class="modal fade">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">您的相关信息</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                               
+                                                    <strong>用户名</strong>：admin <br>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                            </td>
+ 
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <strong>职位</strong>：
+                                <span style="color: rgb(244, 83, 107);"></span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>真实姓名</strong>：
+                                <strong></strong>
+                            </td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>';
+    }
+
+    //修改密码
+    public function editpas() {
+        print_r($_SESSION);
+        if(isset($GLOBALS['submit'])) {
+
+            //$this->db->update('admin', array('factor'=>$factor, 'password'=>md5(md5($password).$factor)), '`uid`='.$uid);
+        } else {
+            include $this->template('editpas');
+        }
+
+    }
+    //每日充值统计
+    public function mrcztj() {
+        echo '<header class="panel-heading">
+			<form class="form-inline" role="form">
+				<input type="hidden" name="m" value="<?php echo M;?>" />
+				<input type="hidden" name="f" value="<?php echo F;?>" />
+				<input type="hidden" name="v" value="<?php echo V;?>" />
+				<input type="hidden" name="_su" value="<?php echo _SU;?>" />
+				<input type="hidden" name="_menuid" value="<?php echo $GLOBALS[\'_menuid\'];?>" />
+				<input type="hidden" name="search" />
+				<div class="input-group">
+					<select name="keyType" class="form-control">
+						<?php foreach($keyArr as $k=>$v){?>
+						<option value="<?php echo $k;?>" <?php echo $keyType == $k ? \'selected\' : \'\'?>><?php echo $v;?></option>
+						<?php }?>
+					</select>
+				</div>
+				<input type="text" name="keyValue" class="usernamekey form-control" value="<?php echo $keyValue?>"/>
+				<div class="input-group">
+					<select name="groupid" class="form-control">
+						<option value=\'\' >会员组</option>
+						<?php if(is_array($group))foreach($group as $v){?>
+						<option value="<?php echo $v[\'groupid\'];?>"<?php echo $v[\'groupid\'] == $groupid ? \'selected\' : \'\'?>><?php echo $v[\'name\'];?></option>
+						<?php }?>
+					</select>
+				</div>
+				　　注册时间 <?php echo WUZHI_form::calendar(\'regTimeStart\', $regTimeStart ? date(\'Y-m-d\', $regTimeStart) : \'\');?>- <?php echo WUZHI_form::calendar(\'regTimeEnd\', $regTimeEnd ? date(\'Y-m-d\', $regTimeEnd) : \'\');?>
+				　　登录时间 <?php echo WUZHI_form::calendar(\'loginTimeStart\', $loginTimeStart ? date(\'Y-m-d\', $loginTimeStart) : \'\');?>- <?php echo WUZHI_form::calendar(\'loginTimeEnd\', $loginTimeEnd ? date(\'Y-m-d\', $loginTimeEnd) : \'\');?>
+				<button type="submit" class="btn btn-info btn-sm">搜索</button>
+			</form>
+		</header>';
+
+    }
+    //查看重置账号操作
+    public function ckczzhcz() {
+        print_r($_SESSION);
+        if(isset($GLOBALS['submit'])) {
+
+            //$this->db->update('admin', array('factor'=>$factor, 'password'=>md5(md5($password).$factor)), '`uid`='.$uid);
+        } else {
+            include $this->template('editpas');
+        }
+
+    }
+    //重置账号密码密保
+    public function czzhmmmb() {
+
+    }
+
+    //查询账号信息
+    public function cxzhxx() {
+
+    }
+
+    //账号操作处理
+    public function zhczcl() {
+
+    }
+
+    //用户角色查询
+    public function yhjscx() {
+
+    }
+    //用户角色操作
+    public function yhjscz() {
+
+    }
+    //公告管理
+    public function gggl() {
+
+    }
+    //公告发送
+    public function ggfs() {
+
+    }
+    // GM权限管理
+    public function gmqxgl() {
+        if(isset($GLOBALS['submit'])) {
+
+            //$this->db->update('admin', array('factor'=>$factor, 'password'=>md5(md5($password).$factor)), '`uid`='.$uid);
+        } else {
+            $parent_top = $this->db->get_list('menu', '`pid`=0', '*', 0, 20);
+            $result = $this->db->get_list('menu', '', '*', 0, 2000, 0, 'sort ASC');
+            $privates_rs = $this->db->get_list('admin_private', array('role'=>1), '*', 0, 2000);
+            $privates = array();
+            foreach($privates_rs as $rs) {
+                if($rs['chk']) $privates[] = $rs['id'];
+            }
+            include $this->template('gmqxgl');
+        }
+    }
+    //地图服务器设置
+    public function dtfwqsz() {
+
+    }
+    //地图服务器查询
+    public function dtfwqcx() {
+
+    }
+    //活动开关
+    public function hdkg() {
+
+    }
+    //在线GM操作
+    public function zxgmczs() {
+
     }
 }
 ?>

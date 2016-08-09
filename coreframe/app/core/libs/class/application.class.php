@@ -38,7 +38,7 @@ final class WUZHI_application {
 	 */
     private function setconfig() {
         $route_config = get_config('route_config','default');
-        print_r($route_config);
+        //print_r($route_config);
         $this->_m = input('m') ? input('m') : $route_config['m'];
         $this->_f = input('f') ? input('f') : $route_config['f'];
         $this->_v = input('v') ? strip_tags(input('v')) : $route_config['v'];

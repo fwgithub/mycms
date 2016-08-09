@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui, user-scalable=no">
     <meta name="description" content="" />
     <meta name="author" content="wuzhicms.cn,Pixel grid studio" />
-    <title>五指互联网站内容管理系统</title>
+    <title>内容管理系统</title>
     <link href="<?php echo R;?>css/bootstrap.min.css" rel="stylesheet" />
     <link href="<?php echo R;?>css/bootstrapreset.css" rel="stylesheet" />
     <link href="<?php echo R;?>css/pxgridsicons.min.css" rel="stylesheet" />
@@ -48,6 +48,7 @@
     <link rel="stylesheet" href="<?php echo R;?>css/ie7/ie7.css">
     <!<![endif]-->
 
+   
     <!--[if IE]>
     <div id="fuckie" class="text-warning fade in mb_0">
         <button data-dismiss="alert" class="close" type="button">×</button>

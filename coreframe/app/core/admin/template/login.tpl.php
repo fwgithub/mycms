@@ -29,7 +29,7 @@
                     </div>
                     <input type="text" id="codeid" name="checkcode" class="form-control" placeholder="验证码" onfocus="javascript:document.getElementById('code_img').src='<?php echo WEBURL;?>api/identifying_code.php?rd='+Math.random();void(0);">
                     <div class="input-group-addon" id="logincode">
-                        <img src="<?php echo R;?>images/logincode.gif" id="code_img" alt="点击刷新" onclick="javascript:this.src='http://192.168.1.119/zlyl/www/api/identifying_code.php?rd='+Math.random();void(0);">
+                        <img src="<?php echo R;?>images/logincode.gif" id="code_img" alt="点击刷新" onclick="javascript:this.src='http://192.168.1.119/mycms/www/api/identifying_code.php?rd='+Math.random();void(0);">
                     </div>
                 </div>
             </div>
